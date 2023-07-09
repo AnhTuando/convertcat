@@ -1,0 +1,230 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "dosis";
+}
+
+:root {
+  --font-green-color: #008b57;
+  --background-color: #22ac78;
+}
+/* General */
+
+.green-bg {
+  background: var(--background-color);
+}
+.light-green-bg {
+  color: var(--background-color);
+}
+.text-gr {
+  color: var(--font-green-color);
+}
+.h-60px {
+  height: 80px;
+}
+.lh-60px {
+  line-height: 80px;
+}
+.wd-200px {
+  width: 400px;
+}
+.sub-nav-bg,
+.footer-bg {
+  background: #008452;
+}
+.fs-14px {
+  font-size: 14px;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-btn-pc {
+  background-color: azure;
+  padding: 10px 15px;
+  bottom: 20px;
+  right: 30px;
+  width: 200px;
+}
+.content-btn-mb {
+  background-color: azure;
+  padding: 5px 10px;
+  bottom: 10px;
+  right: 20px;
+  width: 100px;
+  font-size: 14px;
+}
+.custom-shadow {
+  box-shadow: 0px 0px 5px #c9c9c9;
+}
+.text-special {
+  color: #06f299;
+}
+.navigation-2 {
+  position: sticky;
+  top: 0;
+  position: -webkit-sticky;
+  z-index: 2;
+}
+.text-soft-bl {
+  color: #4e4e4e;
+}
+.ff-roboto {
+  font-family: "Roboto";
+  font-size: 16;
+}
+.wrap-search-box-modal .container .search-input input:focus-visible {
+  outline: none;
+}
+.container .search-btn {
+  opacity: 0.3;
+  transition: 0.25s;
+}
+.container .search-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.wrap-search-box-modal .container .wrap-items-box .item:hover {
+  cursor: pointer;
+}
+.wrap-search-box-modal .container .wrap-items-box .item:hover img {
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+.wrap-search-box-modal .container .render-items-box {
+  overflow: auto;
+  height: 550px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #a3cfbb;
+  border-radius: 10px; /* Border radius cho thanh cuộn */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #008452;
+
+  border-radius: 10px; /* Border radius cho "thanh nằm trong" thanh cuộn */
+}
+.special-bg {
+  background-color: #dafbfa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00613c;
+  cursor: pointer;
+}
+/* End General */
+
+.price-filter-input::-webkit-slider-runnable-track {
+  background: #adffe0;
+  border-radius: 20px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #008452;
+  border-radius: 50%;
+}
+.filter-scroll {
+  height: 100%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 110px;
+  border-radius: 10px; /* Border radius cho "thanh nằm trong" thanh cuộn */
+}
+.filter-mb .filter-box {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: -16px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #a3cfbb;
+  border-radius: 10px; /* Border radius cho thanh cuộn */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #008452;
+
+  border-radius: 10px; /* Border radius cho "thanh nằm trong" thanh cuộn */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00613c;
+  cursor: pointer;
+}
+.name-value {
+  color: #424242;
+}
+.text-soft-bl {
+  color: #4e4e4e;
+}
+
+.name-value .filter-btn-color:hover,
+.filter-btn-fur:hover,
+.filter-btn-size:hover,
+.filter-btn-fur-loss:hover,
+.filter-btn-price:hover {
+  cursor: pointer;
+}
+.price-value {
+  font-family: "Roboto";
+}
+.green-soft-bg {
+  background: #00613c;
+}
+.filter-bg {
+  background: var(--background-color);
+}
+/* filter title hover */
+.filter-pc-box .title:hover {
+  color: var(--font-green-color);
+  transition: 0.25s;
+  cursor: pointer;
+}
+/* hover product items */
+.col-lg-9 .product-item img,
+.col-lg-9 .product-item .cart-btn {
+  transition: 0.75s;
+}
+.col-lg-9 .product-item:hover img {
+  transform: scale(1.1);
+}
+.col-lg-9 .product-item:hover .cart-btn {
+  background: var(--font-green-color);
+  color: #fff;
+  transition: 0.75s;
+}
+@keyframes movingRight {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.filter-mb .filter-box {
+  animation: movingRight 0.2s ease-in-out;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.wrap-search-box-modal {
+  animation: opacity 0.2s ease-in-out;
+}
