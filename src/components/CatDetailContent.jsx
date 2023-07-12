@@ -4,23 +4,24 @@ import { useParams } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import cert1 from "/assets/cert1.png";
 import cert2 from "/assets/cert2.png";
-import cert3 from "/assets/cats/Abyssinian.png";
 import AttachProductList from "./AttachProductList";
 export default function CatDetailContent() {
   // handle render datas
   const { id } = useParams();
   const catDatas = data.cats;
-  // handle toaster
   const notify = () => toast("Đặt Hàng Thành Công !");
+  const addTocart = () => {
+    notify();
+  };
+  // handle toaster
 
   return (
     <section className="product">
-      <img src={cert3} alt="" />
       <ToastContainer theme="light" />
       {catDatas.map((data) => {
         if (data.id == id) {
           return (
-            <div className="container">
+            <div className="container" key={id}>
               <div className="row">
                 <div className="col-12">
                   {" "}
@@ -116,7 +117,7 @@ export default function CatDetailContent() {
                         <div className="payment d-flex">
                           <div
                             className="pay-btn d-flex justify-content-center align-items-center text-decoration-none px-4 green-bg text-light fw-bold rounded-4"
-                            onClick={notify}
+                            onClick={addTocart}
                           >
                             <span>
                               {" "}

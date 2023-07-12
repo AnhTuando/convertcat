@@ -1,7 +1,7 @@
 import { useState } from "react";
 import accessory from "/assets/accessory.png";
 
-function AttachProduct({ id, active, onClick }) {
+function AttachProduct({ active, onClick }) {
   return (
     <div
       className={`ds-pr-1 h-100 ${active ? "border-gr" : "border-none"} `}
@@ -12,21 +12,33 @@ function AttachProduct({ id, active, onClick }) {
   );
 }
 
-export default function AttachProductList() {
+export default function AttachProductList({ attachProduct }) {
+  const [isAttach, setIsAttach] = useState(false);
   const [buttons, setButtons] = useState([
     { button: <AttachProduct />, active: false },
     { button: <AttachProduct />, active: false },
     { button: <AttachProduct />, active: false },
   ]);
+
   const handleButtonClick = (index) => {
     const updatedButtons = buttons.map((button, i) => {
+      if (i === index) {
+        return {
+          ...button,
+          active: !button.active,
+        };
+      }
       return {
         ...button,
-        active: i === index && !button.active,
+        active: false,
       };
     });
 
     setButtons(updatedButtons);
+    const anyButtonActive = updatedButtons.some((button) => button.active);
+    setIsAttach(anyButtonActive);
+    attachProduct = isAttach;
+    console.log(isAttach);
   };
   return (
     <div className="item d-flex">

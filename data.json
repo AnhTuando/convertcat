@@ -28,7 +28,7 @@
       "size": "Trung bình",
       "furr": "Ngắn",
       "furrLose": "Nhiều",
-      "price": "5.500.000"
+      "price": "5.000.000"
     },
     {
       "id": 4,
@@ -108,7 +108,7 @@
       "size": "Trung bình",
       "furr": "Ngắn",
       "furrLose": "Nhiều",
-      "price": "9.500.000"
+      "price": "9.000.000"
     },
     {
       "id": 12,
@@ -118,7 +118,7 @@
       "size": "Trung bình",
       "furr": "Dài",
       "furrLose": "Nhiều",
-      "price": "7.500.000"
+      "price": "7.000.000"
     },
     {
       "id": 13,
@@ -128,7 +128,7 @@
       "size": "To",
       "furr": "Dài",
       "furrLose": "Nhiều",
-      "price": "7.500.000"
+      "price": "6.000.000"
     },
     {
       "id": 14,
@@ -767,16 +767,6 @@
       "thumbnail": "/assets/litters/Xịt Vệ Sinh.png",
       "price": "100.000",
       "brand": "Trung Quốc"
-    }
-  ],
-  "oderProducts": [
-    {
-      "id": 1,
-      "name": "Mèo Anh Lông Ngắn",
-      "quantity": 2,
-      "AttachProducts": false,
-      "price": 20000000,
-      "thumbnail": "https://jsonserver-vercel.vercel.app/cats/Anh%20L%C3%B4ng%20D%C3%A0i.png"
     }
   ]
 }

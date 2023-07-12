@@ -1,6 +1,8 @@
 import "../index.css";
 import Logo from "/assets/TheCatLogo.png";
 import NavMobileBtn from "./NavMobileBtn";
+import { NavLink, generatePath } from "react-router-dom";
+import NavSearchButton from "./NavSearchButton";
 export default function Header() {
   return (
     <section className="header">
@@ -45,19 +47,17 @@ export default function Header() {
           <div className="row">
             <NavMobileBtn />
             <div className="col-6">
-              <a
-                href="/"
+              <NavLink
+                to={generatePath("/")}
                 className="mobile-logo d-flex justify-content-center align-items-center"
               >
                 <img src={Logo} className="img-fluid" alt="" />
-              </a>
+              </NavLink>
             </div>
             <div className="col-3 float-end d-flex justify-content-around align-items-center">
-              <div className="search-mb fs-3 text-light fw-bold">
-                <i className="bi bi-search" />
-              </div>
-              <a
-                href="./checkout.html"
+              <NavSearchButton />
+              <NavLink
+                to={generatePath("/checkout")}
                 className="cart-mobile-btn fs-3 text-light fw-bold text-decoration-none position-relative"
               >
                 <i className="bi bi-cart4" />
@@ -72,7 +72,7 @@ export default function Header() {
                 >
                   !
                 </span>
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
