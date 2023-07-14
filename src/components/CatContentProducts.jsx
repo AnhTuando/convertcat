@@ -2,13 +2,11 @@ import "../cats.css";
 import data from "/data.json";
 import { NavLink, generatePath } from "react-router-dom";
 export default function CatsContentProducts({ catObject, isUpdate }) {
-  console.log(catObject);
   const catDatas = data.cats;
+  // filtered data
   const filteredCats = catDatas.filter((cat) => {
-    // Hàm trung gian để kiểm tra giá trị thuộc tính trước khi so sánh
     const shouldIgnoreProperty = (propertyValue) => propertyValue === "";
 
-    // Kiểm tra các thuộc tính của cat và demo, bỏ qua so sánh nếu giá trị là rỗng ('')
     return (
       (shouldIgnoreProperty(catObject.color) ||
         cat.color === catObject.color) &&
@@ -19,7 +17,6 @@ export default function CatsContentProducts({ catObject, isUpdate }) {
     );
   });
 
-  console.log(filteredCats);
   return (
     <>
       {isUpdate == true ? (

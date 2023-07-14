@@ -2,8 +2,15 @@ import data from "/data.json";
 import { ToastContainer, toast } from "react-toastify";
 
 import { useParams } from "react-router-dom";
+export const generateRandomId = () => {
+  const timestamp = new Date().getTime();
+  const randomId = `${timestamp}`;
+  return Number(randomId);
+};
 export default function OtherDetailContext({ category }) {
+  let itemArrs = JSON.parse(localStorage.getItem("myArray")) || [];
   const { id } = useParams();
+
   // handle toaster
   const notify = () => toast("Đặt Hàng Thành Công !");
 
@@ -21,7 +28,23 @@ export default function OtherDetailContext({ category }) {
   if (dataKey == "toys") {
     renderDatas = data.toys;
   }
-
+  const addTocart = () => {
+    renderDatas.map((data) => {
+      if (data.id == id) {
+        const addProduct = {
+          id: generateRandomId(),
+          quantity: 1,
+          price: data.price,
+          name: data.name,
+          img: data.thumbnail,
+          attachProduct: false,
+        };
+        itemArrs.push(addProduct);
+      }
+    });
+    notify();
+    localStorage.setItem("myArray", JSON.stringify(itemArrs));
+  };
   return (
     <section className="product my-3">
       <ToastContainer theme="light" />
@@ -62,7 +85,7 @@ export default function OtherDetailContext({ category }) {
                       <div className="payment d-flex">
                         <div
                           className="pay-btn text-decoration-none d-flex align-items-center px-2 px-lg-3 green-bg text-light fw-bold rounded-4"
-                          onClick={notify}
+                          onClick={addTocart}
                         >
                           Thêm vào giỏ hàng
                         </div>
