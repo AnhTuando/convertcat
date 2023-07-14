@@ -7,7 +7,6 @@ export default function CatSubInfo({
   furr,
   furrLoss,
   size,
-  isHovered,
   trueId,
 }) {
   return (

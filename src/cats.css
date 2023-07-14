@@ -229,5 +229,5 @@ input[type="range"]::-webkit-slider-thumb {
   animation: opacity 0.2s ease-in-out;
 }
 .product-item .sub-info {
-  right: -150px;
+  right: -100px;
 }
