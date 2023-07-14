@@ -228,3 +228,6 @@ input[type="range"]::-webkit-slider-thumb {
 .wrap-search-box-modal {
   animation: opacity 0.2s ease-in-out;
 }
+.product-item .sub-info {
+  right: -150px;
+}

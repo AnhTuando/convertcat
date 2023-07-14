@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CheckoutItems from "./CheckoutItems";
 export default function CheckoutCarts() {
   let locaDatas = JSON.parse(localStorage.getItem("myArray")) || [];

@@ -1,7 +1,19 @@
 import "../cats.css";
 import data from "/data.json";
 import { NavLink, generatePath } from "react-router-dom";
+import CatSubInfo from "./CatSubInfo";
+import { useState } from "react";
 export default function CatsContentProducts({ catObject, isUpdate }) {
+  const [hoveredElement, setHoveredElement] = useState(null);
+
+  const handleMouseEnter = (elementId) => {
+    setHoveredElement(elementId);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredElement(null);
+  };
+
   const catDatas = data.cats;
   // filtered data
   const filteredCats = catDatas.filter((cat) => {
@@ -29,9 +41,20 @@ export default function CatsContentProducts({ catObject, isUpdate }) {
             >
               <NavLink
                 to={generatePath("/cats/:id", { id: data.id })}
-                className="product-item text-decoration-none rounded-2 custom-shadow d-flex p-3"
+                className="product-item text-decoration-none rounded-2 custom-shadow d-flex p-3 "
               >
-                <div className="item d-flex flex-column gap-2 position-relative">
+                <div
+                  className="item d-flex flex-column gap-2 position-relative"
+                  onMouseEnter={() => handleMouseEnter(data.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <CatSubInfo
+                    color={data.color}
+                    size={data.size}
+                    furr={data.furr}
+                    furrLoss={data.furrLose}
+                    trueId={data.id === hoveredElement}
+                  />
                   <div className="pr-img">
                     <img src={data.thumbnail} className="img-fluid" alt="" />
                   </div>
@@ -70,9 +93,20 @@ export default function CatsContentProducts({ catObject, isUpdate }) {
             >
               <NavLink
                 to={generatePath("/cats/:id", { id: data.id })}
-                className="product-item text-decoration-none rounded-2 custom-shadow d-flex p-3"
+                className="product-item text-decoration-none rounded-2 custom-shadow d-flex p-3 "
               >
-                <div className="item d-flex flex-column gap-2 position-relative">
+                <div
+                  className="item d-flex flex-column gap-2 position-relative"
+                  onMouseEnter={() => handleMouseEnter(data.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <CatSubInfo
+                    color={data.color}
+                    trueId={data.id === hoveredElement}
+                    size={data.size}
+                    furr={data.furr}
+                    furrLoss={data.furrLose}
+                  />
                   <div className="pr-img">
                     <img src={data.thumbnail} className="img-fluid" alt="" />
                   </div>
