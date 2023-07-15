@@ -1,16 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CheckoutItems from "./CheckoutItems";
+import { DataContext } from "./CheckoutContent";
 export default function CheckoutCarts() {
-  let locaDatas = JSON.parse(localStorage.getItem("myArray")) || [];
-  const [localData, setLocalData] = useState(locaDatas);
-  console.log(locaDatas);
+  const { data, setData } = useContext(DataContext);
   const handleDeleleProduct = (id) => {
-    const filteredData = localData.filter((item) => item.id !== id);
-    setLocalData(filteredData);
-    localStorage.setItem("myArray", JSON.stringify(filteredData));
+    const filteredData = data.filter((item) => item.id !== id);
+    setData(filteredData);
   };
   const handleIncrease = (id) => {
-    const updatedData = localData.map((item) => {
+    const updatedData = data.map((item) => {
       if (item.id === id) {
         return {
           ...item,
@@ -19,11 +17,10 @@ export default function CheckoutCarts() {
       }
       return item;
     });
-    setLocalData(updatedData);
-    localStorage.setItem("myArray", JSON.stringify(updatedData));
+    setData(updatedData);
   };
   const handleDecrease = (id) => {
-    const updatedData = localData.map((item) => {
+    const updatedData = data.map((item) => {
       if (item.id === id) {
         if (item.quantity > 1) {
           return {
@@ -35,10 +32,8 @@ export default function CheckoutCarts() {
       }
       return item;
     });
-    setLocalData(updatedData);
-    localStorage.setItem("myArray", JSON.stringify(updatedData));
+    setData(updatedData);
   };
-  // localStorage.removeItem("myArray");
 
   return (
     <div className="col-12 col-lg-6 check-cart bg-light p-4 rounded-2 mb-2">
@@ -47,7 +42,7 @@ export default function CheckoutCarts() {
           <div className="title text-gr fw-medium">SẢN PHẨM</div>
         </div>
         <div className="wrap-cart-items my-2">
-          {localData.map((item) => (
+          {data.map((item) => (
             <CheckoutItems
               name={item.name}
               img={item.img}

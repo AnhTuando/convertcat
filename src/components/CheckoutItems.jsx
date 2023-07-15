@@ -1,5 +1,3 @@
-const localData = JSON.parse(localStorage.getItem("myArray")) || [];
-
 export default function CheckoutItems({
   id,
   name,
