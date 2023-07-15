@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { DataContext } from "./CheckoutContent";
+
 export default function Ordered() {
-  const dataCustomer = JSON.parse(localStorage.getItem("Cusomter")) || [];
-  const [dataState, setDataState] = useState(dataCustomer);
+  const { customerData, setCustomerData } = useContext(DataContext);
+
+  const [dataState, setDataState] = useState(customerData);
   return (
     <>
       {dataState.map((data) => (
@@ -10,7 +14,7 @@ export default function Ordered() {
             <div className="row mb-4">
               <div className="col-9">
                 <div className="title title text-gr fw-medium text-uppercase">
-                  Sản Phẩm
+                  ĐƠN HÀNG
                 </div>
               </div>
               <div className="col-3">

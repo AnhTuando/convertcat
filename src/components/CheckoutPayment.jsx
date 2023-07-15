@@ -3,9 +3,7 @@ import { useState, useContext } from "react";
 import { DataContext } from "./CheckoutContent";
 
 export default function CheckoutPayment() {
-  const dataCustomer = localStorage.getItem("Cusomter") || [];
-
-  const { data } = useContext(DataContext);
+  const { data, customerData, setCustomerData } = useContext(DataContext);
 
   const [updateCartPrice, setUpdateCartPrice] = useState(0);
 
@@ -16,8 +14,8 @@ export default function CheckoutPayment() {
       ...value,
       price: updateCartPrice.toLocaleString("vi-VN"),
     };
-    dataCustomer.push(customerItem);
-    localStorage.setItem("Cusomter", JSON.stringify(dataCustomer));
+    setCustomerData([...customerData, customerItem]);
+    console.log(customerData);
   };
   const totalValue = () => {
     let total = 0;
@@ -33,7 +31,7 @@ export default function CheckoutPayment() {
     setUpdateCartPrice(total);
   };
   // console.log(totalValue());
-  // localStorage.removeItem("myData");
+  // localStorage.removeItem("Customer");
 
   return (
     <div className="col-12 col-lg-6 payment bg-light p-4 rounded-2 mb-2">

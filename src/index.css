@@ -135,20 +135,6 @@
   background-color: #dafbfa;
 }
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  border-radius: 50%;
-  opacity: 0.7;
-
-  transition: 0.25s;
-}
-
-.carousel-control-next-icon:hover,
-.carousel-control-prev-icon:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
 .left-col-element {
   height: 225px;
 }
@@ -219,6 +205,16 @@
   opacity: 0;
   transition: 0.75s;
 }
+.active {
+  color: rgb(160, 196, 0); /* Màu khi được chọn */
+}
+.clear-btn:hover {
+  cursor: pointer;
+}
+.close-search-modal {
+  cursor: pointer;
+}
+
 /*End product */
 
 /* Event */

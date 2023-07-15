@@ -18,21 +18,22 @@ export default function CarouselIndex() {
         </div>
       </div>
       <button
-        className="carousel-control-prev"
+        className="carousel-control-prev text-success fs-2"
         type="button"
         data-bs-target="#carouselExample"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
+        <i class="bi bi-chevron-left d-none d-sm-block" aria-hidden="true" />
         <span className="visually-hidden">Previous</span>
       </button>
       <button
-        className="carousel-control-next"
+        className="carousel-control-next text-success fs-2 "
         type="button"
         data-bs-target="#carouselExample"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true" />
+        <i class="bi bi-chevron-right d-none d-sm-block" aria-hidden="true" />
+
         <span className="visually-hidden">Next</span>
       </button>
     </div>
